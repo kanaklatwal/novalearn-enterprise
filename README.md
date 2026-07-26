@@ -2,8 +2,8 @@
 
 A production-quality, fully responsive enterprise learning platform landing page, **inspired by the layout, spacing, and user flow of [enterprise.accredian.com](https://enterprise.accredian.com/)** — built as an original implementation with its own branding ("NovaLearn Enterprise"), copy, components, and design system. No content, code, or assets were copied from the reference site.
 
-**Live site:** _add your Vercel URL here after deploying_
-**Repository:** _add your GitHub URL here_
+**Live site:** https://novalearn-enterprise-nine.vercel.app/
+**Repository:** https://github.com/kanaklatwal/novalearn-enterprise
 
 ---
 
@@ -126,16 +126,7 @@ This project was built with the assistance of Claude (Anthropic). Specifically:
   `lib/data.ts` content model
 - Writing the `/api/leads` validation logic and the `LeadForm` fetch/error
   handling
-- **Actually running `npm install` and `npm run build`** to catch real
-  compile errors rather than assuming the code was correct — this caught:
-  - `lucide-react`'s current version no longer exporting brand icons
-    (`Linkedin`, `Twitter`), requiring a swap to generic icons
-  - A TypeScript/Framer Motion prop-type conflict on a shared `Button`
-    component (native `onDrag`/`onAnimationStart` handlers collide with
-    Framer Motion's own event types)
-  - ESLint's `react/no-unescaped-entities` rule on apostrophes in JSX text
-  - A missing `next-env.d.ts` triggering a false "cannot find module for
-    CSS import" TypeScript error
+
 
 **What was reviewed/would be refined manually:**
 - Copy was rewritten to be specific to this project rather than generic
