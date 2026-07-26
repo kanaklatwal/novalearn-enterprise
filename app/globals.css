@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand-50: #eef4ff;
+  --color-brand-100: #dce8ff;
+  --color-brand-200: #b8d0ff;
+  --color-brand-300: #86adff;
+  --color-brand-400: #5583ff;
+  --color-brand-500: #2f5bff;
+  --color-brand-600: #1c3fed;
+  --color-brand-700: #172fc2;
+  --color-brand-800: #16299a;
+  --color-brand-900: #16277a;
+  --color-brand-950: #0d1747;
+
+  --color-ink-900: #0a1229;
+  --color-ink-800: #10182f;
+  --color-ink-700: #18213e;
+
+  --color-sky-glow: #eaf1ff;
+
+  --shadow-soft: 0 1px 2px rgba(16, 24, 60, 0.04), 0 8px 24px -8px rgba(16, 24, 60, 0.10);
+  --shadow-lift: 0 4px 10px rgba(16, 24, 60, 0.06), 0 24px 48px -16px rgba(23, 63, 255, 0.18);
+
+  --animate-marquee: marquee 32s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: var(--color-ink-900);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-200);
+    color: var(--color-ink-900);
+  }
+}
+
+@layer utilities {
+  .container-px {
+    padding-inline: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-px {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  .text-gradient-brand {
+    background-image: linear-gradient(90deg, var(--color-brand-600), var(--color-brand-400));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(23, 63, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(23, 63, 255, 0.06) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
